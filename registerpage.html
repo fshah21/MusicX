@@ -1,0 +1,163 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<html>
+<head>
+<title>Create An Account</title>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+<link href="bootstrap.css" type="text/css" rel="stylesheet">
+<link href="css/registerpage.css" rel="stylesheet" type="text/css" media="all"/> 
+</head>
+<body>
+	<!-- main -->
+        <script>
+            
+            function printDays()
+{
+for(i=0;i<31;i++){ 
+var dateVar = 1 + i; 
+document.write('<option value=\"' + dateVar + '\">' + dateVar + '</option>'); 
+}
+}
+
+/***Prints The Years on the Registration Form***/
+function printYears()
+{
+for(i=0;i<83;i++)
+{ 
+var dateVar = 1930 + i; 
+document.write('<option value=\"' + dateVar + '\">' + dateVar + '</option>'); 
+}
+}
+    </script>
+		<h1>Sign Up</h1> 
+		  <div class="login-w3top">
+              
+                <div class="now playing" id="music">
+                  <span class="bar n1">A</span>
+                  <span class="bar n2">B</span>
+                  <span class="bar n3">c</span>
+                  <span class="bar n4">D</span>
+                  <span class="bar n5">E</span>
+                  <span class="bar n6">F</span>
+                  <span class="bar n7">G</span>
+                  <span class="bar n8">H</span>
+                </div>
+    </div>
+        <div class="mainw3-agileinfo form"> 
+			<div id="login">    
+				<form name="register" action="registerpage.php" method="post" onsubmit="return validateregform()" > 
+					<div class="top-row">
+						<div class="field-wrap">
+							<label> First Name<span class="req">*</span>  </label>
+							<input type="text" name="fname" required autocomplete="off" />
+						</div> 
+						<div class="field-wrap">
+							<label> Last Name<span class="req">*</span>  </label>
+							<input type="text" name="lname" required autocomplete="off"/>
+						</div>
+						<div class="clear"> </div>
+					</div> 
+					<div class="field-wrap">
+						<label> Enter Your Email<span class="req">*</span> </label>
+						<input type="email" name="email" required autocomplete="off"/>
+					</div> 
+					<div class="field-wrap">
+						<label> Your Password<span class="req">*</span> </label>
+						<input type="password"  name="pwd" required autocomplete="off"/>
+					</div> 
+                    <div class="field-wrap">
+						<label> Re-Type Password<span class="req">*</span> </label>
+						<input type="password"  name="pwd2" required autocomplete="off"/>
+					</div> 
+                    <div class="top-row">
+						<div class="field-wrap">
+							<label> Gender<span class="req">*</span>  </label>
+							<input type="text" disabled />
+						</div> 
+						<select name = "sex" required class="col-md-6" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+						<div class="clear"> </div>
+					</div> 
+                    <div class="top-row">
+						<div class="field-wrap" id="date">
+							<label> Birth Date<span class="req">*</span>  </label>
+							<input type="text" disabled />
+						</div> 
+                        <div id="birth">
+                            <select name="day" id="days" >
+                            <script>printDays();</script>
+                        </select>
+                             <select name="month" id="months">
+                                <option value="1">January
+                                <option value="2">February
+                                <option value="3">March
+                                <option value="4">April
+                                <option value="5">May
+                                <option value="6">June
+                                <option value="7">July
+                                <option value="8">August
+                                <option value="9">September
+                                <option value="10">October
+                                <option value="11">November
+                                <option value="12">December
+                            </select>
+
+<select name="year" id="years">
+<script>printYears();</script>
+</select>
+                        
+                        </div>
+                        
+						<div class="clear"> </div>
+					</div>
+                    <input type="submit" class="button button-block" value="Register"/>
+				</form> 
+    </div>
+            <b><div id="error" style="height: 24px;color: #F00; ">
+        </div></b>
+         <p>Already Have An Account ? <a href="loginpage.html">Log In</a></p>
+		</div>	 
+        
+        <script src="jquery-2.2.3.min.js"></script>
+	<script>
+	$('.form').find('input, textarea').on('keyup blur focus', function (e) { 
+	  var $this = $(this),
+		  label = $this.prev('label');
+
+		  if (e.type === 'keyup') {
+				if ($this.val() === '') {
+			  label.removeClass('active highlight');
+			} else {
+			  label.addClass('active highlight');
+			}
+		} else if (e.type === 'blur') {
+			if( $this.val() === '' ) {
+				label.removeClass('active highlight'); 
+				} else {
+				label.removeClass('highlight');   
+				}   
+		} else if (e.type === 'focus') {
+		  
+		  if( $this.val() === '' ) {
+				label.removeClass('highlight'); 
+				} 
+		  else if( $this.val() !== '' ) {
+				label.addClass('highlight');
+				}
+		}
+ 
+	}); 
+    
+
+	</script>
+    <script src="registerpage.js"></script>
+</body>
+</html>

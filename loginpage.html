@@ -1,0 +1,92 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log Into Your Account</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<!-- //js -->  
+<!-- web font -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+<!-- //web font -->
+<link href="bootstrap.css" type="text/css">
+<link href="css/loginpage.css" rel="stylesheet" type="text/css" media="all" /> 
+</head>
+<body>
+	<!-- main -->
+		<h1>Log In</h1> 
+		  <div class="login-w3top">
+              
+                <div class="now playing" id="music" style="margin-top:100px;">
+                  <span class="bar n1">A</span>
+                  <span class="bar n2">B</span>
+                  <span class="bar n3">c</span>
+                  <span class="bar n4">D</span>
+                  <span class="bar n5">E</span>
+                  <span class="bar n6">F</span>
+                  <span class="bar n7">G</span>
+                  <span class="bar n8">H</span>
+                </div>
+    </div>
+        <div class="mainw3-agileinfo form"> 
+			<div id="login">    
+				<form name = "loginbox" action="loginpage.php" method="post" onsubmit="validatelogin()"> 
+					<div class="field-wrap">
+						<label> Enter Your Email<span class="req">*</span> </label>
+						<input type="email" name ="email" required autocomplete="off"/>
+					</div> 
+					<div class="field-wrap">
+						<label> Your Password<span class="req">*</span> </label>
+						<input type="password" name="password" required autocomplete="off"/>
+                    </div>
+                    <input type="submit" class="button button-block" value="Log In"/>
+				</form> 
+			</div>
+         <p>Don't Have An Account Yet? <a href="registerpage.html">Create An Account</a></p>
+		</div>	 
+        <b><div id="error" style="height: 24px;color: #F00; ">
+        </div></b>
+        
+        
+	<script>
+	$('.form').find('input, textarea').on('keyup blur focus', function (e) { 
+	  var $this = $(this),
+		  label = $this.prev('label');
+
+		  if (e.type === 'keyup') {
+				if ($this.val() === '') {
+			  label.removeClass('active highlight');
+			} else {
+			  label.addClass('active highlight');
+			}
+		} else if (e.type === 'blur') {
+			if( $this.val() === '' ) {
+				label.removeClass('active highlight'); 
+				} else {
+				label.removeClass('highlight');   
+				}   
+		} else if (e.type === 'focus') {
+		  
+		  if( $this.val() === '' ) {
+				label.removeClass('highlight'); 
+				} 
+		  else if( $this.val() !== '' ) {
+				label.addClass('highlight');
+				}
+		}
+ 
+	}); 
+    
+	</script>
+    <script src="loginpage.js"></script>
+</body>
+</html>
